@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER, LOGIN } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, LOGIN, NOTICE, TIMELINE} from "./actionTypes";
 
 let nextTodoId = 0;
 
@@ -23,4 +23,14 @@ export const setFilter = filter => ({
 export const login = login => ({
   type: LOGIN,
   login: { login }
+});
+
+export const notice = notice => ({
+  type: NOTICE,
+  notice: { notice }
+});
+
+export const timeline = timeline => ({
+  type: TIMELINE,
+  timeline: { timeline }
 });
