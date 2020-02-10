@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Col, Row } from 'react-bootstrap';
 
-import TodoApp from './TodoApp';
+import Header from './components/Header';
+import Top from './components/Top';
 import Login from './components/Login';
-//import {login} from './redux/actions';
 
 const mapStateToProps = state => {
   return {loginState: state.login};
@@ -13,11 +14,22 @@ const App = ({loginState}) => {
   return (
     <div>
       {
-        loginState ? <TodoApp/> : <Login/>
+        loginState ? Layout : <Login/>
       }
     </div>
   );
 };
+
+const Layout = (
+  <Row>
+    <Col sm={2} className="bg-danger">
+      <Header/>
+    </Col>
+    <Col sm={10}>
+      <Top/>
+    </Col>
+  </Row>
+)
 
 export default connect(
   mapStateToProps
