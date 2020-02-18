@@ -4,3 +4,4 @@ export const SET_FILTER = "SET_FILTER";
 export const LOGIN = "LOGIN";
 export const NOTICE = "NOTICE";
 export const TIMELINE = "TIMELINE";
+export const MONTHLY_SEARCH = "MONTHLY_SEARCH";
