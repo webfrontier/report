@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {notice} from '../redux/actions';
-import '../css/page.css'
 
 const mapStateToProps = state => {
   return {notices: state.notice};

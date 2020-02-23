@@ -13,6 +13,7 @@ import {app} from './redux/actions';
 import './css/bootstrap.min.css';
 import './css/brands.min.css';
 import './css/solid.min.css';
+import './css/page.css';
 
 const mapStateToProps = state => {
   return {loginState: state.login};
@@ -34,7 +35,7 @@ const Layout = (
       <Col sm={2} className="bg-danger">
         <Header/>
       </Col>
-      <Col sm={10}>
+      <Col sm={{span: 8, offset: 1}}>
         <Switch>
           <Route exact path="/" component={Top} />
           <Route path="/monthly" render ={() => ( <Monthly/>)} />
