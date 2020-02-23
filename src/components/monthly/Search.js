@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Jumbotron, Form, ToggleButtonGroup, ToggleButton, Button, Row, Col} from 'react-bootstrap';
-import {monthlySearch} from '../redux/actions';
+import {monthlySearch} from '../../redux/actions';
 
 const mapStateProps = (state) => {
   return ({

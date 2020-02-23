@@ -9,7 +9,7 @@ const Header = () => {
     <header className="site-header text-white hidden-xs">
       <div className="header-menu center-block">
         <div className="header-menu-title">
-          <a href="#">
+          <a href="/">
             <h1 className="bg-danger text-white">
               Report
             </h1>

@@ -8,7 +8,7 @@ import { history } from './redux/store';
 import Header from './components/Header';
 import Top from './components/Top';
 import Login from './components/Login';
-import Monthly from './components/Monthly';
+import Monthly from './components/monthly/Top';
 import {app} from './redux/actions';
 import './css/bootstrap.min.css';
 import './css/brands.min.css';
