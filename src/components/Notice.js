@@ -15,7 +15,7 @@ const Notice = ({notices, notice}) => {
       <ListGroup>
         {
           notices.map((data) =>
-            <ListGroup.Item>{data.date}  {data.title}</ListGroup.Item>
+            <ListGroup.Item key={data.title}>{data.date}  {data.title}</ListGroup.Item>
           )
         }
       </ListGroup>

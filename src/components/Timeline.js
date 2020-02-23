@@ -14,7 +14,7 @@ const Timeline = ({reports, timeline}) => {
       <ListGroup>
         {
           reports.map((report) =>
-            <ListGroup.Item action href="#">
+            <ListGroup.Item action href="#" key={report.userName}>
               {report.userName} {report.targetDate}分　
               <small className="text-muted">投稿日: {report.date}  </small>
               <div className="float-right"><Badge variant="success">{report.tag}</Badge></div>
