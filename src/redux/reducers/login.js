@@ -7,7 +7,7 @@ const login = (
     switch (action.type) {
       case LOGIN: {
         return {
-        ...state,
+          ...state,
           login: !action.login
         };
       }

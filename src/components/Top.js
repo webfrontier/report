@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import Notice from './Notice';
 import Timeline from './Timeline';
 
