@@ -22,7 +22,7 @@ const Header = () => {
              <span>月報</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#">トップ</Dropdown.Item>
+              <Dropdown.Item href="/monthly">トップ</Dropdown.Item>
               <Dropdown.Item href="#">マイ月報</Dropdown.Item>
               <Dropdown.Item href="#">月報登録</Dropdown.Item>
             </Dropdown.Menu>
