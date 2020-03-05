@@ -1,10 +1,15 @@
 // ActionCreatorを定義
-import { LOGIN, NOTICE, TIMELINE, APP, MONTHLY, MONTHLY_SEARCH} from "./actionTypes";
+import { LOGIN, NOTICE, TIMELINE, APP, MONTHLY, MONTHLY_SEARCH } from "./actionTypes";
 
-export const login = login => ({
-  type: LOGIN,
-  login
-});
+let auth = false;
+
+export const login = status => {
+  auth = !status
+  return {
+    type: LOGIN,
+    login: auth
+  }
+};
 
 export const notice = notice => ({
   type: NOTICE,
@@ -17,7 +22,8 @@ export const timeline = timeline => ({
 });
 
 export const app = app => ({
-  type: APP
+  type: APP,
+  login: auth
 });
 
 export const monthlySearch = monthlySearch => ({
@@ -27,6 +33,6 @@ export const monthlySearch = monthlySearch => ({
 
 export const monthly = monthly => ({
   type: MONTHLY,
-  monthly: { monthly}
+  monthly: { monthly }
 });
 

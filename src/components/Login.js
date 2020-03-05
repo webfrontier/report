@@ -6,7 +6,7 @@ import '../css/login.css';
 import {login} from '../redux/actions'
 
 const mapStateToProps = state => {
-  return {stateProps: state.login};
+  return {stateProps: state.login.status};
 };
 
 const Login = ({stateProps, login}) => {
@@ -49,4 +49,5 @@ const Login = ({stateProps, login}) => {
 
 export default connect(
   mapStateToProps,
-  { login })(Login);
+  { login }
+)(Login);

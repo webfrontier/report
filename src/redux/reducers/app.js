@@ -6,7 +6,8 @@ const app = (state=initialState, action) => {
   switch (action.type) {
     case APP: {
       return {
-        ...state
+        ...state,
+        login: action.login
       };
     }
     default: {

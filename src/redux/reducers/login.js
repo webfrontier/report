@@ -1,6 +1,6 @@
 import {LOGIN} from '../actionTypes';
 
-const initialState = false;
+const initialState = {status: false};
 
 const login = (
   (state = initialState, action) => {
@@ -8,7 +8,7 @@ const login = (
       case LOGIN: {
         return {
           ...state,
-          login: !action.login
+          status: action.login
         };
       }
       default:

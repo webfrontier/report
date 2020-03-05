@@ -3,9 +3,10 @@ import {connect} from 'react-redux';
 import ListGroup from 'react-bootstrap/ListGroup';
 import {notice} from '../redux/actions';
 
-const mapStateToProps = state => {
-  return {notices: state.notice};
-};
+const mapStateToProps = state => ({
+  notices: state.notice,
+  location: state.router.location
+});
 
 const Notice = ({notices, notice}) => {
   return (

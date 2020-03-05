@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Container } from 'react-bootstrap';
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from './redux/store';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import configureStore from './redux/store';
@@ -14,7 +16,9 @@ const rootElement = document.getElementById('root');
 ReactDOM.render((
   <Provider store={store}>
     <Container fluid={true}>
-      <App/>
+      <ConnectedRouter history={history}>
+        <App/>
+      </ConnectedRouter>
     </Container>
   </Provider>),
   rootElement
