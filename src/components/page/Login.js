@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { Form, Col, Row, Button } from 'react-bootstrap';
-import '../css/text.css';
-import '../css/login.css';
-import {login} from '../redux/actions'
+import '../../css/text.css';
+import '../../css/login.css';
+import {login} from '../../redux/actions'
 
 const mapStateToProps = state => {
   return {stateProps: state.login.status};

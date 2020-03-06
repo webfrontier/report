@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import Top from './components/Top';
-import Login from './components/Login';
-import Monthly from './components/monthly/Top';
+import Top from './components/page/Top';
+import Login from './components/page/Login';
+import Monthly from './components/page/monthly/Top';
 import PrivateRoute from './components/routes/PrivateRoute';
 import {app} from './redux/actions';
 

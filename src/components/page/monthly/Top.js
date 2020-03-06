@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import MonthlySearch from './Search';
-import Timeline from '../Timeline';
-import {monthly} from '../../redux/actions';
+import MonthlySearch from '../../monthly/Search';
+import Timeline from '../../Timeline';
+import {monthly} from '../../../redux/actions';
 
 const mapStateProps = (state) => {
   return ({

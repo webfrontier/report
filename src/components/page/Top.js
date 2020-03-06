@@ -1,6 +1,6 @@
 import React from 'react';
-import Notice from './Notice';
-import Timeline from './Timeline';
+import Notice from '../Notice';
+import Timeline from '../Timeline';
 
 export default function Top() {
   return (
