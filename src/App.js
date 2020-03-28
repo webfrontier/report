@@ -6,6 +6,7 @@ import Top from './components/page/Top';
 import Login from './components/page/Login';
 import Monthly from './components/page/monthly/Top';
 import MonthlyUserList from './components/page/monthly/MonthlyUserList';
+import MonthlyEdit from './components/page/monthly/MonthlyEdit';
 import PrivateRoute from './components/routes/PrivateRoute';
 import {app} from './redux/actions';
 
@@ -21,6 +22,7 @@ const App = (props) => {
       <PrivateRoute exact path="/" render = {() => ( <Top/> )} user={user} />
       <PrivateRoute exact path="/monthly/:id" render ={() => ( <Monthly/>)} user={user} />
       <PrivateRoute path="/monthly/user/:id" render ={() => ( <MonthlyUserList/>)} user={user} />
+      <PrivateRoute path="/monthly/new/:id" render ={() => ( <MonthlyEdit/>)} user={user} />
       <Route path="/login" render ={() => props.app().login ? <Redirect to="/"/> : (<Login/>)} />
     </Switch>
   );
