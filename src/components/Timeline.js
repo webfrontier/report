@@ -22,7 +22,7 @@ const Timeline = ({reports, timeline}) => {
           )
         }
       </ListGroup>
-      <a className="float-right" href="#">月報一覧はこちら</a>
+      <a className="float-right" href="/monthly/100">月報一覧はこちら</a>
     </div>
   );
 };
