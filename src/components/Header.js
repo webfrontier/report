@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {Nav, Dropdown} from 'react-bootstrap';
 import '../css/header.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="site-header text-white hidden-xs">
       <div className="header-menu center-block">
@@ -23,7 +23,7 @@ const Header = () => {
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/monthly/100">トップ</Dropdown.Item>
-              <Dropdown.Item href="#">マイ月報</Dropdown.Item>
+              <Dropdown.Item href="/monthly/user/100">マイ月報</Dropdown.Item>
               <Dropdown.Item href="#">月報登録</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -42,7 +42,7 @@ const Header = () => {
           <Dropdown as={Nav.Item} drop="up" id="dropdown-variants-up">
             <Dropdown.Toggle as={Nav.Link} className="lead bg-danger text-white">
              <FontAwesomeIcon icon='align-justify' aria-hidden="true" size='lg'/>
-              <span>ユーザ</span>
+              <span>{props.user}</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#">管理画面へ</Dropdown.Item>

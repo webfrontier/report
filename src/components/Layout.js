@@ -12,7 +12,7 @@ const Layout = (props) => {
   return (
     <Row>
       <Col sm={2} className="bg-danger">
-        <Header/>
+        <Header user={props.user}/>
       </Col>
       <Col sm={{span: 8, offset: 1}}>
         <Route {...props} />
