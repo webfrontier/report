@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
+import MonthlyDatePicker from '../../editor/MonthlyDatePicker'
 import {monthlyEdit} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -18,6 +19,15 @@ const mapDispatchToProps = (dispatch) => (
   {onClick: (key, isPreview, value) => dispatch(monthlyEdit(key, isPreview, value))}
 );
 
+const TargetMonth = () => (
+ <Form.Group as={Row}>
+    <Form.Label column sm={2}>対象月</Form.Label>
+    <Col sm={10}>
+      <MonthlyDatePicker />
+    </Col>
+  </Form.Group>
+);
+
 const MonthlyEdit = (props) => {
   return (
     <div>
@@ -26,27 +36,7 @@ const MonthlyEdit = (props) => {
         <Card>
           <Card.Body>
             <Form>
-              <Form.Group as={Row} controlId="targetMonth">
-                <Form.Label column sm="2">対象月</Form.Label>
-                <Col sm="10">
-                  <Form.Control as="select">
-                    <option>2019年01月</option>
-                    <option>2019年02月</option>
-                    <option>2019年03月</option>
-                    <option>2019年04月</option>
-                    <option>2019年05月</option>
-                    <option>2019年06月</option>
-                    <option>2019年07月</option>
-                    <option>2019年08月</option>
-                    <option>2019年09月</option>
-                    <option>2019年10月</option>
-                    <option>2019年11月</option>
-                    <option>2019年12月</option>
-                    <option>2020年01月</option>
-                    <option>2020年02月</option>
-                  </Form.Control>
-                </Col>
-              </Form.Group>
+              <TargetMonth />
               <MarkdownEditor key="ProjectOutline" controlId="ProjectOutline"
                 label="プロジェクト概要" data={{key: "projectOutline", ...props.projectOutline}} clickEvent={props.onClick}/>
               <MarkdownEditor key="businessContent" controlId="businessContent"
