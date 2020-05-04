@@ -15,6 +15,8 @@ const WeeklyDatePicker = () => {
       onChange={date => setStartDate(date)}
       filterDate={isWeekday}
       placeholderText="Select a weekday"
+      className="form-control"
+      dateFormat="yyyy年MM月dd日を含む週"
     />
   );
 };
