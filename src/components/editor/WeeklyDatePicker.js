@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 
 const WeeklyDatePicker = () => {
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
   const isWeekday = date => {
     const day = date.getDay();
     return day !== 0 && day !== 6;
