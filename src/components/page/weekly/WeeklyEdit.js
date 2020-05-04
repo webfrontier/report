@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
 import WeeklyDatePicker from '../../editor/WeeklyDatePicker'
+import WorkLocationSelect from '../../editor/WorkLocationSelect'
 import {weeklyEdit} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -28,6 +29,15 @@ const TargetWeek = () => (
   </Form.Group>
 );
 
+const WorkLocation = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>勤務地</Form.Label>
+    <Col sm={10}>
+      <WorkLocationSelect/>
+    </Col>
+  </Form.Group>
+);
+
 const WeeklyEdit = (props) => {
   return (
     <div>
@@ -37,6 +47,7 @@ const WeeklyEdit = (props) => {
           <Card.Body>
             <Form>
               <TargetWeek />
+              <WorkLocation/>
               <MarkdownEditor key="ProjectOutline" controlId="ProjectOutline"
                 label="プロジェクト概要" data={{key: "projectOutline", ...props.projectOutline}} clickEvent={props.onClick}/>
               <MarkdownEditor key="businessContent" controlId="businessContent"
