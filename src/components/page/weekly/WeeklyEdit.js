@@ -4,15 +4,15 @@ import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
 import WeeklyDatePicker from '../../editor/WeeklyDatePicker'
 import WorkLocationSelect from '../../editor/WorkLocationSelect'
+import TextEditor from '../../editor/TextEditor'
 import {weeklyEdit} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
   return {
     title: state.weeklyEdit.title,
-    projectOutline: state.weeklyEdit.projectOutline,
-    businessContent: state.weeklyEdit.businessContent,
-    check: state.weeklyEdit.check,
-    target: state.weeklyEdit.target
+    businessContact: state.weeklyEdit.businessContact,
+    impression: state.weeklyEdit.impression,
+    freeWord: state.weeklyEdit.freeWord
   }
 }
 
@@ -48,14 +48,15 @@ const WeeklyEdit = (props) => {
             <Form>
               <TargetWeek />
               <WorkLocation/>
-              <MarkdownEditor key="ProjectOutline" controlId="ProjectOutline"
-                label="プロジェクト概要" data={{key: "projectOutline", ...props.projectOutline}} clickEvent={props.onClick}/>
-              <MarkdownEditor key="businessContent" controlId="businessContent"
-                label="業務内容" data={{key: "businessContent", ...props.businessContent}} clickEvent={props.onClick}/>
-              <MarkdownEditor key="check" controlId="check"
-                label="今月の振り返り" data={{key: "check",...props.check}} clickEvent={props.onClick}/>
-              <MarkdownEditor key="target" controlId="target"
-                label="来月の目標" data={{key: "target", ...props.target}} clickEvent={props.onClick}/>
+              <TextEditor controlId="vacation" label="休暇予定" placeholder="2020/5/11(月) 休暇予定"/>
+              <TextEditor controlId="weeklyOperation" label="今週の稼働" placeholder="40H"/>
+              <TextEditor controlId="monthlyOperation" label="今月の稼働" placeholder="160H"/>
+              <MarkdownEditor key="businessContact" controlId="businessContact"
+                label="業務連絡" data={{key: "businessContact", ...props.businessContact}} clickEvent={props.onClick}/>
+              <MarkdownEditor key="impression" controlId="impression"
+                label="所感" data={{key: "impression", ...props.impression}} clickEvent={props.onClick}/>
+              <MarkdownEditor key="freeWord" controlId="freeWord"
+                label="自由記述" data={{key: "freeWord",...props.freeWord}} clickEvent={props.onClick}/>
               <Button variant="secondary" size="lg" block>
                 下書き保存
               </Button>

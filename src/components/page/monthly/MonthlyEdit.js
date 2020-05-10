@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
 import MonthlyDatePicker from '../../editor/MonthlyDatePicker'
+import TextEditor from '../../editor/TextEditor'
 import {monthlyEdit} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -37,6 +38,7 @@ const MonthlyEdit = (props) => {
           <Card.Body>
             <Form>
               <TargetMonth />
+              <TextEditor controlId="members" label="チーム体制" placeholder="10名（プロパ: 5名、パートナー:5名(自社:3名))"/>
               <MarkdownEditor key="ProjectOutline" controlId="ProjectOutline"
                 label="プロジェクト概要" data={{key: "projectOutline", ...props.projectOutline}} clickEvent={props.onClick}/>
               <MarkdownEditor key="businessContent" controlId="businessContent"

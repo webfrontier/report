@@ -2,10 +2,9 @@ import {WEEKLY_EDIT} from '../actionTypes'
 
 const initialState = {
   title: "週報登録",
-  projectOutline: {isPreview: false, value: "Hello, **project!**"},
-  businessContent: {isPreview: false, value: "Hello, **business!**"},
-  check: {isPreview: false, value: "Hello, **check!**"},
-  target: {isPreview: false, value: "Hello, **target!**"},
+  businessContact: {isPreview: false, value: "Hello, **businessContact!**"},
+  impression: {isPreview: false, value: "Hello, **impression!**"},
+  freeWord: {isPreview: false, value: "Hello, **freeWord!**"},
 }
 
 const weeklyEdit = (
