@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {monthlySearch} from '../../redux/actions';
+import {weeklySearch} from '../../redux/actions';
 import Search from "../Search"
 
 const mapStateProps = (state) => {
@@ -9,11 +9,11 @@ const mapStateProps = (state) => {
   });
 };
 
-const MonthlySearch = ({mapStateProps}) => {
-  return <Search isTarget="month" {...mapStateProps}/>
+const WeeklySearch = ({mapStateProps}) => {
+  return <Search isTarget="week" {...mapStateProps}/>
 };
 
 export default connect(
   mapStateProps,
-  monthlySearch
-)(MonthlySearch);
+  weeklySearch
+)(WeeklySearch);

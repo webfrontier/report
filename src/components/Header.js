@@ -19,12 +19,23 @@ const Header = (props) => {
           <Dropdown as={Nav.Item}>
             <Dropdown.Toggle as={Nav.Link} className="lead bg-danger text-white">
              <FontAwesomeIcon icon='align-justify' aria-hidden="true" size='lg'/>
+             <span>週報</span>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/weekly/100">トップ</Dropdown.Item>
+              <Dropdown.Item href="/weekly/user/100">マイ週報</Dropdown.Item>
+              <Dropdown.Item href="/weekly/new/100">週報登録</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown as={Nav.Item}>
+            <Dropdown.Toggle as={Nav.Link} className="lead bg-danger text-white">
+             <FontAwesomeIcon icon='align-justify' aria-hidden="true" size='lg'/>
              <span>月報</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="/monthly/100">トップ</Dropdown.Item>
               <Dropdown.Item href="/monthly/user/100">マイ月報</Dropdown.Item>
-              <Dropdown.Item href="#">月報登録</Dropdown.Item>
+              <Dropdown.Item href="/monthly/new/100">月報登録</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown as={Nav.Item}>

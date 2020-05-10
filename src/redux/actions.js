@@ -1,5 +1,5 @@
 // ActionCreatorを定義
-import { LOGIN, NOTICE, TIMELINE, APP, MONTHLY, MONTHLY_SEARCH, MONTHLY_EDIT } from "./actionTypes";
+import { LOGIN, NOTICE, TIMELINE, APP, MONTHLY, MONTHLY_SEARCH, MONTHLY_EDIT, WEEKLY_SEARCH, WEEKLY_EDIT } from "./actionTypes";
 
 let auth = false;
 
@@ -41,6 +41,20 @@ export const monthlyEdit = (key, isPreview, value) => {
   obj[key] = {isPreview: isPreview, value: value}
   return ({
     type: MONTHLY_EDIT,
+    ...obj
+  });
+};
+
+export const weeklySearch = weeklySearch => ({
+  type: WEEKLY_SEARCH,
+  weeklySearch: { weeklySearch }
+});
+
+export const weeklyEdit = (key, isPreview, value) => {
+  let obj = {}
+  obj[key] = {isPreview: isPreview, value: value}
+  return ({
+    type: WEEKLY_EDIT,
     ...obj
   });
 };
