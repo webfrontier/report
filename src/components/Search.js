@@ -47,15 +47,15 @@ const Search = (props) => {
         <Form.Group as={Row}>
           <Form.Label column sm={2}>担当した工程</Form.Label>
           <Col sm={10}><ToggleButtonGroup type="checkbox" className="mb-2">
-            <ToggleButton value={1}>要件定義</ToggleButton>
-            <ToggleButton value={2}>設計</ToggleButton>
-            <ToggleButton value={3}>実装</ToggleButton>
-            <ToggleButton value={4}>テスト</ToggleButton>
-            <ToggleButton value={5}>運用保守</ToggleButton>
-            <ToggleButton value={6}>分析</ToggleButton>
-            <ToggleButton value={7}>研修</ToggleButton>
-            <ToggleButton value={8}>構築</ToggleButton>
-            <ToggleButton value={9}>障害対応</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={1}>要件定義</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={2}>設計</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={3}>実装</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={4}>テスト</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={5}>運用保守</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={6}>分析</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={7}>研修</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={8}>構築</ToggleButton>
+            <ToggleButton variant="outline-primary" className="job-role" value={9}>障害対応</ToggleButton>
           </ToggleButtonGroup></Col>
         </Form.Group>
         <Button variant="primary" type="submit">

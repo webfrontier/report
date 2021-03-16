@@ -6,7 +6,6 @@ import '../../../css/table.css'
 
 const mapStateToProps = (state) => {
   return ({
-    user: state.monthlyUserList.userName,
     year: state.monthlyUserList.year,
     monthlies: state.monthlyUserList.monthlies
   })
@@ -15,7 +14,6 @@ const mapStateToProps = (state) => {
 const MonthlyUserList = (mapStateToProps) => {
   return (
     <div id="monthly-uesr-list">
-      <h1>{mapStateToProps.user}</h1>
       <div className="page-body">
         <h2>{mapStateToProps.year}年の月報</h2>
         <LinkContainer to="#">
@@ -35,13 +33,13 @@ const MonthlyUserList = (mapStateToProps) => {
           <tbody>
             {
               mapStateToProps.monthlies.map((month) =>
-                <tr>
+                <tr key={month.id}>
                   <td>{month.id}月</td>
                   <td><Badge variant={month.state.class}>{month.state.name}</Badge></td>
                   <td>
                     {
                       month.actions.map((action) =>
-                        <LinkContainer to="#">
+                        <LinkContainer to="#" key={action}>
                           <Button variant="success">{action}</Button>
                         </LinkContainer>
                       )

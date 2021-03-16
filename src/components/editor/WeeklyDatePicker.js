@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
+import "../../css/editor.css";
 
 const WeeklyDatePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -11,6 +12,7 @@ const WeeklyDatePicker = () => {
   };
   return (
     <DatePicker
+      id="weekly-datepicker"
       selected={startDate}
       onChange={date => setStartDate(date)}
       filterDate={isWeekday}

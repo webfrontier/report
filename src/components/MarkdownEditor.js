@@ -7,6 +7,7 @@ const MarkdownEditor = (props) => {
   let value = props.data.value;
   let myRef = React.createRef();
   let md = new Remarkable();
+  let rows = props.size || "5"
   return (
     <Form.Group as={Row} controlId={props.controlId}>
       <Form.Label column sm="2">{props.label}</Form.Label>
@@ -29,7 +30,7 @@ const MarkdownEditor = (props) => {
                   <p className="content" dangerouslySetInnerHTML={{__html: md.render(value)}}/>
                 </blockquote>
               ) : (
-                <Form.Control as="textarea" rows="5"
+                <Form.Control as="textarea" rows={rows}
                  defaultValue={value} ref={myRef}/>
               )
             }

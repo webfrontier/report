@@ -1,19 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import MonthlySearch from '../../monthly/MonthlyUserList';
-import {monthly} from '../../../redux/actions';
+import {monthly} from '../../../../redux/actions';
+import MonthlyUserList from '../MonthlyUserList';
 
 const mapStateProps = (state) => {
   return ({
-    active: state.active
+    active: state.active,
+    name: state.monthlyUserList.userName
   });
 };
 
 const MonthlyUserTop = (mapStateProps) => {
   return (
     <div>
-      <h1>mapStateProps.name</h1>
-      <MontlyUserList/>
+      <h1>{mapStateProps.name}</h1>
+      <MonthlyUserList/>
     </div>
   );
 };
@@ -21,4 +22,4 @@ const MonthlyUserTop = (mapStateProps) => {
 export default connect(
   mapStateProps,
   monthly
-)(Monthly);
+)(MonthlyUserTop);
