@@ -6,6 +6,7 @@ const initialState = {
   businessContent: {isPreview: false, value: "Hello, **business!**"},
   check: {isPreview: false, value: "Hello, **check!**"},
   target: {isPreview: false, value: "Hello, **target!**"},
+  registTags: [{name: 'java'}],
 }
 
 const monthlyEdit = (

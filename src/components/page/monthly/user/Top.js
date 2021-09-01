@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {monthly} from '../../../../redux/actions';
 import MonthlyUserList from '../MonthlyUserList';
 
 const mapStateProps = (state) => {
@@ -21,5 +20,4 @@ const MonthlyUserTop = (mapStateProps) => {
 
 export default connect(
   mapStateProps,
-  monthly
 )(MonthlyUserTop);

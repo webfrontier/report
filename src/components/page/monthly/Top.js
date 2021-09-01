@@ -10,7 +10,7 @@ const mapStateProps = (state) => {
   });
 };
 
-const Monthly = (mapStateProps) => {
+const Monthly = () => {
   return (
     <div>
       <h1>月報トップ</h1>
@@ -20,7 +20,8 @@ const Monthly = (mapStateProps) => {
   );
 };
 
-export default connect(
-  mapStateProps,
-  monthly
-)(Monthly);
+export default Monthly;
+// export default connect(
+//   mapStateProps,
+//   monthly
+// )(Monthly);

@@ -29,11 +29,11 @@ const initialState = {
 
 const monthlyUserList = (
   (state=initialState, action) => {
-    switch (action.Type) {
+    switch (action.type) {
       case MONTHLY_USER_LIST: {
         return {
           ...state,
-          ...action.monthlyUserList
+          ...{ monthlies: action.monthlyUserList }
         };
       }
       default:

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Form} from 'react-bootstrap'
 
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
@@ -18,7 +19,7 @@ const WeeklyDatePicker = () => {
       filterDate={isWeekday}
       placeholderText="Select a weekday"
       className="form-control"
-      dateFormat="yyyy年MM月dd日含む週"
+      dateFormat="yyyy年ww週"
       showWeekNumbers
     />
   );

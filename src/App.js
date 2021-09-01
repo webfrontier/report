@@ -7,6 +7,7 @@ import Login from './components/page/Login';
 import Monthly from './components/page/monthly/Top';
 import MonthlyUserTop from './components/page/monthly/user/Top';
 import MonthlyEdit from './components/page/monthly/MonthlyEdit';
+import Weekly from './components/page/weekly/Top';
 import WeeklyEdit from './components/page/weekly/WeeklyEdit';
 import PrivateRoute from './components/routes/PrivateRoute';
 import {app} from './redux/actions';
@@ -24,6 +25,7 @@ const App = (props) => {
       <PrivateRoute exact path="/monthly/:id" render ={() => ( <Monthly/>)} user={user} />
       <PrivateRoute path="/monthly/user/:id" render ={() => ( <MonthlyUserTop/>)} user={user} />
       <PrivateRoute path="/monthly/new/:id" render ={() => ( <MonthlyEdit/>)} user={user} />
+      <PrivateRoute exact path="/weekly/:id" render ={() => ( <Weekly/>)} user={user} />
       <PrivateRoute path="/weekly/new/:id" render ={() => ( <WeeklyEdit/>)} user={user} />
       <Route path="/login" render ={() => props.app().login ? <Redirect to="/"/> : (<Login/>)} />
     </Switch>

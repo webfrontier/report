@@ -4,7 +4,8 @@ import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
 import MonthlyDatePicker from '../../editor/MonthlyDatePicker'
 import TextEditor from '../../editor/TextEditor'
-import {monthlyEdit} from '../../../redux/actions'
+import TagEditor from '../../editor/TagEditor'
+import {monthlyEdit, monthlyEditDeleteTag, monthlyEditInputTag} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -12,12 +13,18 @@ const mapStateToProps = (state) => {
     projectOutline: state.monthlyEdit.projectOutline,
     businessContent: state.monthlyEdit.businessContent,
     check: state.monthlyEdit.check,
-    target: state.monthlyEdit.target
+    target: state.monthlyEdit.target,
+    registTags: state.monthlyEdit.registTags,
   }
 }
 
 const mapDispatchToProps = (dispatch) => (
-  {onClick: (key, isPreview, value) => dispatch(monthlyEdit(key, isPreview, value))}
+  {
+    onClick: (key, isPreview, value) => dispatch(monthlyEdit(key, isPreview, value)),
+    deleteTag: (tags, index) => dispatch(monthlyEditDeleteTag(tags, index)),
+    inputTagEvent: (tags, e) => dispatch(monthlyEditInputTag(tags, e)),
+  }
+
 );
 
 const TargetMonth = () => (
@@ -30,6 +37,7 @@ const TargetMonth = () => (
 );
 
 const MonthlyEdit = (props) => {
+  console.log(props);
   return (
     <div>
       <h1>{props.title}</h1>
@@ -38,6 +46,7 @@ const MonthlyEdit = (props) => {
           <Card.Body>
             <Form>
               <TargetMonth />
+              <TagEditor controlId="tags" label="タグ" placeholder="Git" registTags={props.registTags} clickEvent={props.deleteTag} inputEvent={props.inputTagEvent}/>
               <TextEditor controlId="members" label="チーム体制" placeholder="10名（プロパ: 5名、パートナー:5名(自社:3名))"/>
               <MarkdownEditor key="ProjectOutline" controlId="ProjectOutline"
                 label="プロジェクト概要" data={{key: "projectOutline", ...props.projectOutline}} clickEvent={props.onClick}/>

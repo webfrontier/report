@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { useEffect, useCallback } from 'react'
 import {connect} from 'react-redux'
 import {LinkContainer} from 'react-router-bootstrap'
 import {Button, Badge, Table} from 'react-bootstrap'
 import '../../../css/table.css'
+import {fetchMonthly} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
-  return ({
+  return {
     year: state.monthlyUserList.year,
     monthlies: state.monthlyUserList.monthlies
-  })
+  }
 }
 
-const MonthlyUserList = (mapStateToProps) => {
+const mapDispatchToProps = (dispatch) => {
+  return { m: () => dispatch(fetchMonthly()) }
+};
+
+const MonthlyUserList = (props) => {
+  const dispatch = props.m;
+  const callback = useCallback(() => {
+    dispatch();
+  }, [dispatch]);
+
+  useEffect(() => {
+    callback();
+  }, [callback]);
+  const monthlies = props.monthlies;
   return (
     <div id="monthly-uesr-list">
       <div className="page-body">
-        <h2>{mapStateToProps.year}年の月報</h2>
+        <h2>{props.year}年の月報</h2>
         <LinkContainer to="#">
-          <Button variant="link">&lt;&lt; {mapStateToProps.year - 1}年</Button>
+          <Button variant="link">&lt;&lt; {props.year - 1}年</Button>
         </LinkContainer>
         <LinkContainer to="#" className="float-right">
-          <Button variant="link">{mapStateToProps.year + 1}年 &gt;&gt;</Button>
+          <Button variant="link">{props.year + 1}年 &gt;&gt;</Button>
         </LinkContainer>
         <Table striped hover>
           <thead>
@@ -32,7 +46,7 @@ const MonthlyUserList = (mapStateToProps) => {
           </thead>
           <tbody>
             {
-              mapStateToProps.monthlies.map((month) =>
+              monthlies.map((month) =>
                 <tr key={month.id}>
                   <td>{month.id}月</td>
                   <td><Badge variant={month.state.class}>{month.state.name}</Badge></td>
@@ -56,5 +70,6 @@ const MonthlyUserList = (mapStateToProps) => {
 };
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps,
 )(MonthlyUserList)
