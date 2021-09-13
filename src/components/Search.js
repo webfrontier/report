@@ -1,7 +1,17 @@
 import React from 'react'
 import {Jumbotron, Form, Row, Col, Button, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+import DailyDatePicker from './editor/DailyDatePicker'
 import WeeklyDatePicker from './editor/WeeklyDatePicker'
 import MonthlyDatePicker from './editor/MonthlyDatePicker'
+
+const TargetDay = () => (
+  <Form.Group as={Row}>
+     <Form.Label column sm={2}>対象日</Form.Label>
+     <Col sm={10}>
+       <DailyDatePicker />
+     </Col>
+   </Form.Group>
+ );
 
 const TargetWeek = () => (
   <Form.Group as={Row}>

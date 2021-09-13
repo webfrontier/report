@@ -7,6 +7,8 @@ import timeline from './timeline';
 import monthlyUserList from './monthlyUserList';
 import monthlyEdit from './monthlyEdit';
 import weeklyEdit from './weeklyEdit';
+import dailyEdit from './dailyEdit';
+
 
 const createRootReducer = (history) => combineReducers({
   router: connectRouter(history),
@@ -17,5 +19,6 @@ const createRootReducer = (history) => combineReducers({
   monthlyUserList,
   monthlyEdit,
   weeklyEdit,
+  dailyEdit,
 })
 export default createRootReducer;

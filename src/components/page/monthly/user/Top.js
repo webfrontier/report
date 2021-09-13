@@ -13,7 +13,7 @@ const MonthlyUserTop = (mapStateProps) => {
   return (
     <div>
       <h1>mapStateProps.name</h1>
-      <MontlyUserList/>
+      <MonthlyUserList/>
     </div>
   );
 };
@@ -21,4 +21,4 @@ const MonthlyUserTop = (mapStateProps) => {
 export default connect(
   mapStateProps,
   monthly
-)(Monthly);
+)(monthly);

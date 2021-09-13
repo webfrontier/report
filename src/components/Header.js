@@ -19,6 +19,17 @@ const Header = (props) => {
           <Dropdown as={Nav.Item}>
             <Dropdown.Toggle as={Nav.Link} className="lead bg-danger text-white">
              <FontAwesomeIcon icon='align-justify' aria-hidden="true" size='lg'/>
+             <span>日報</span>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/daily/100">トップ</Dropdown.Item>
+              <Dropdown.Item href="/daily/user/100">マイ日報</Dropdown.Item>
+              <Dropdown.Item href="/daily/new/100">日報登録</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown as={Nav.Item}>
+            <Dropdown.Toggle as={Nav.Link} className="lead bg-danger text-white">
+             <FontAwesomeIcon icon='align-justify' aria-hidden="true" size='lg'/>
              <span>週報</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>

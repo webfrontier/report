@@ -8,3 +8,5 @@ export const MONTHLY_USER_LIST = "MONTHLY_USER_LIST";
 export const MONTHLY_EDIT = "MONTHLY_EDIT";
 export const WEEKLY_SEARCH = "WEEKLY_SEARCH";
 export const WEEKLY_EDIT = "WEEKLY_EDIT";
+export const DAILY_SEARCH = "DAILY_SEARCH";
+export const DAILY_EDIT = "DAILY_EDIT";
