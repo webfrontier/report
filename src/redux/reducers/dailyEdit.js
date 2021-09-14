@@ -3,6 +3,7 @@ import {DAILY_EDIT} from '../actionTypes'
 const initialState = {
   title: "日報登録",
   businessContact: {isPreview: false, value: "Hello, **businessContact!**"},
+  tobusinessContact: {isPreview: false, value: "Hello, **tomorrowbusinessContact!**"},
   impression: {isPreview: false, value: "Hello, **impression!**"},
   freeWord: {isPreview: false, value: "Hello, **freeWord!**"},
 }

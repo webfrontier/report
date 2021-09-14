@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
-import DailylyDatePicker from '../../editor/DailyDatePicker'
+import DailyDatePicker from '../../editor/DailyDatePicker'
 import WorkLocationSelect from '../../editor/WorkLocationSelect'
 import TextEditor from '../../editor/TextEditor'
 import {dailyEdit} from '../../../redux/actions'
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
   return {
     title: state.dailyEdit.title,
     businessContact: state.dailyEdit.businessContact,
+    tobusinessContact: state.dailyEdit.tobusinessContact,
     impression: state.dailyEdit.impression,
     freeWord: state.dailyEdit.freeWord
   }
@@ -48,11 +49,12 @@ const DailyEdit = (props) => {
             <Form>
               <TargetDay />
               <WorkLocation/>
-              <TextEditor controlId="vacation" label="休暇予定" placeholder="2020/5/11(月) 休暇予定"/>
-              <TextEditor controlId="weeklyOperation" label="今週の稼働" placeholder="40H"/>
-              <TextEditor controlId="monthlyOperation" label="今月の稼働" placeholder="160H"/>
+              <TextEditor controlId="dailyWorkinghours" label="今日の勤務時間" placeholder="10H-19H"/>
+              <TextEditor controlId="dailyOperation" label="今日の稼働" placeholder="8H"/>
               <MarkdownEditor key="businessContact" controlId="businessContact"
-                label="業務連絡" data={{key: "businessContact", ...props.businessContact}} clickEvent={props.onClick}/>
+                label="本日の業務内容" data={{key: "businessContact", ...props.businessContact}} clickEvent={props.onClick}/>
+                <MarkdownEditor key="tobusinessContact" controlId="tobusinessContact"
+                label="明日の業務内容" data={{key: "tobusinessContact", ...props.tobusinessContact}} clickEvent={props.onClick}/>
               <MarkdownEditor key="impression" controlId="impression"
                 label="所感" data={{key: "impression", ...props.impression}} clickEvent={props.onClick}/>
               <MarkdownEditor key="freeWord" controlId="freeWord"
