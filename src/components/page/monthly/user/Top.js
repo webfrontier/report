@@ -21,4 +21,4 @@ const MonthlyUserTop = (mapStateProps) => {
 export default connect(
   mapStateProps,
   monthly
-)(monthly);
+)(Monthly);

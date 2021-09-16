@@ -4,7 +4,12 @@ import {Form, Row, Col, Button, Card} from 'react-bootstrap'
 import MarkdownEditor from '../../MarkdownEditor'
 import DailyDatePicker from '../../editor/DailyDatePicker'
 import WorkLocationSelect from '../../editor/WorkLocationSelect'
-import TextEditor from '../../editor/TextEditor'
+import WorkingTimeStHour from '../../editor/WorkingTimeStHour'
+import WorkingTimeStMin from '../../editor/WorkingTimeStMin'
+import WorkingTimeEdHour from '../../editor/WorkingTimeEdHour'
+import WorkingTimeEdMin from '../../editor/WorkingTimeEdMin'
+import DailyWorkingTimeHour from '../../editor/DailyWorkingTimeHour'
+import DailyWorkingTimeMin from '../../editor/DailyWorkingTimeMin'
 import {dailyEdit} from '../../../redux/actions'
 
 const mapStateToProps = (state) => {
@@ -39,6 +44,60 @@ const WorkLocation = () => (
   </Form.Group>
 );
 
+const WorkingTimeStH = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>勤務開始</Form.Label>
+    <Col sm={10}>
+      <WorkingTimeStHour/>
+    </Col>
+  </Form.Group>
+);
+
+const WorkingTimeStM = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>時刻</Form.Label>
+    <Col sm={10}>
+      <WorkingTimeStMin/>
+    </Col>
+  </Form.Group>
+);
+
+const WorkingTimeEdH = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>勤務終了</Form.Label>
+    <Col sm={10}>
+      <WorkingTimeEdHour/>
+    </Col>
+  </Form.Group>
+);
+
+const WorkingTimeEdM = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>時刻</Form.Label>
+    <Col sm={10}>
+      <WorkingTimeEdMin/>
+    </Col>
+  </Form.Group>
+);
+
+const DailyWorkingTimeH = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>今日の</Form.Label>
+    <Col sm={10}>
+      <DailyWorkingTimeHour/>
+    </Col>
+  </Form.Group>
+);
+
+const DailyWorkingTimeM = () => (
+  <Form.Group as={Row}>
+    <Form.Label column sm={2}>稼働時間</Form.Label>
+    <Col sm={10}>
+      <DailyWorkingTimeMin/>
+    </Col>
+  </Form.Group>
+);
+
 const DailyEdit = (props) => {
   return (
     <div>
@@ -49,11 +108,12 @@ const DailyEdit = (props) => {
             <Form>
               <TargetDay />
               <WorkLocation/>
-              <TextEditor controlId="dailyWorkinghours" label="今日の勤務時間" placeholder="10H-19H"/>
-              <TextEditor controlId="dailyOperation" label="今日の稼働" placeholder="8H"/>
+              <WorkingTimeStH/><WorkingTimeStM/>
+              <WorkingTimeEdH/><WorkingTimeEdM/>
+              <DailyWorkingTimeH/><DailyWorkingTimeM/>
               <MarkdownEditor key="businessContact" controlId="businessContact"
                 label="本日の業務内容" data={{key: "businessContact", ...props.businessContact}} clickEvent={props.onClick}/>
-                <MarkdownEditor key="tobusinessContact" controlId="tobusinessContact"
+              <MarkdownEditor key="tobusinessContact" controlId="tobusinessContact"
                 label="明日の業務内容" data={{key: "tobusinessContact", ...props.tobusinessContact}} clickEvent={props.onClick}/>
               <MarkdownEditor key="impression" controlId="impression"
                 label="所感" data={{key: "impression", ...props.impression}} clickEvent={props.onClick}/>
